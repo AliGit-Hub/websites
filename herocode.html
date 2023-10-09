@@ -1,0 +1,54 @@
+<html>
+<head>
+    <style>
+        .imgs {
+            display: flex;
+            align-items: center;
+        }
+        .img-container {
+            display: flex;
+            margin:2.5cm auto;
+        }
+        .img1, .img2, .img3 {
+            max-height: 500px;
+            transition: transform 1s ease-in-out;
+        }
+        .img1 img, .img2 img, .img3 img {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgs">
+        <div class="img-container">
+            <div class="img1">
+                <img src="https://images.ctfassets.net/uaddx06iwzdz/1F8mzaJihPyCc39fuxWZlr/07bb86f9b58d02cde7a880da661612f5/bmw-e30-l-01.jpg" alt="Image 1">
+            </div>
+            <div class="img2">
+                <img src="https://bmwspeed.nl/wp-content/uploads/2018/02/BMW-7-Serie-E38-Diesel.jpg" alt="Image 2">
+            </div>
+            <div class="img3">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/p90236612-highres-the-bmw-m3-csl-e46-0tk-1600280493.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchImages() {
+            const img1 = document.querySelector('.img1 img');
+            const img2 = document.querySelector('.img2 img');
+            const img3 = document.querySelector('.img3 img');
+
+            const tempSrc = img1.src;
+            img1.src = img2.src;
+            img2.src = img3.src;
+            img3.src = tempSrc;
+
+            setTimeout(switchImages, 3000);
+        }
+
+        switchImages();
+    </script>
+</body>
+</html>
